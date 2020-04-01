@@ -94,7 +94,11 @@ var KrajeeDialog;
                 buttons, $inputDiv, $input, attr = '', i;
             cbOk = function (dialog) {
                 var data, $body = dialog.getModalBody();
-                data = $body.find("input")[0].value || '';
+                if ($body.find("input").length) {
+                    data = $body.find("input")[0].value || '';
+                } else if ($body.find("textarea").length) {
+                    data = $body.find("textarea")[0].value || '';
+                }
                 callback(data);
                 dialog.close();
             };
