@@ -100,7 +100,9 @@ var KrajeeDialog;
                     data = $body.find("textarea")[0].value || '';
                 }
                 callback(data);
-                dialog.close();
+                if (data.length) {
+                    dialog.close();
+                };
             };
             cbCancel = function (dialog) {
                 dialog.close();
