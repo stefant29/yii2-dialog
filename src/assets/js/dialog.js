@@ -102,7 +102,7 @@ var KrajeeDialog;
                 callback(data);
                 if (data.length) {
                     dialog.close();
-                };
+                }
             };
             cbCancel = function (dialog) {
                 dialog.close();
